@@ -1,12 +1,13 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/muniprakash04/carwebsite.git'
-            }
-        }
+   stage('Checkout') {
+    steps {
+        git branch: 'main',
+            credentialsId: 'jenklin',
+            url: 'https://github.com/muniprakash04/carwebsite.git'
+    }
+}
 
         stage('Deploy') {
             steps {
